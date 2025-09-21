@@ -22,4 +22,4 @@ jobs:
 
       - name: Run script
         run: |
-          python ./scripts/mirror.py
+          python mirror.py
