@@ -1,12 +1,12 @@
-name: Mirror LinkedIn Posts
+name: Mirror Test
 
 on:
   workflow_dispatch: # allows manual run
-  schedule:
-    - cron: "*/15 * * * *" # runs every 15 minutes
+  push: # runs on every push
+    branches: [main]
 
 jobs:
-  mirror:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,10 +16,5 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Install dependencies
-        run: |
-          pip install requests feedparser requests_oauthlib PyPDF2
-
       - name: Run script
-        run: |
-          python scripts/mirror.py
+        run: python scripts/mirror.py
