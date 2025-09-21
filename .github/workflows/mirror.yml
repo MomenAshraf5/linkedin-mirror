@@ -1,7 +1,9 @@
-name: Twitter Post
+name: Twitter Mirror
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
 
 jobs:
   post_tweet:
