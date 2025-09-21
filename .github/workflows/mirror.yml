@@ -1,8 +1,8 @@
 name: Mirror Test
 
 on:
-  workflow_dispatch: # allows manual run
-  push: # runs on every push
+  workflow_dispatch:
+  push:
     branches: [main]
 
 jobs:
@@ -15,6 +15,10 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          pip install requests feedparser requests_oauthlib PyPDF2
 
       - name: Run script
         run: python scripts/mirror.py
