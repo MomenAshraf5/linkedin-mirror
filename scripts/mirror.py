@@ -4,7 +4,7 @@ import requests
 TWITTER_BEARER = os.getenv("TWITTER_BEARER")  # Only this is needed
 
 def post_to_twitter(text):
-    url = "https://api.twitter.com/2/tweets"
+    url = "https://api.x.com/2/tweets"
     headers = {
         "Authorization": f"Bearer {TWITTER_BEARER}",
         "Content-Type": "application/json"
